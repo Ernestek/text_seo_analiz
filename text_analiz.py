@@ -4,12 +4,12 @@ from collections import Counter
 import nltk
 import pymorphy2
 import spacy
+from iso639 import to_name
 from langdetect import detect
 from nltk import word_tokenize, BigramAssocMeasures, BigramCollocationFinder
 from nltk.corpus import stopwords
 
 from main import get_lemma
-from iso639 import to_name
 
 
 class TextAnalyzer:
