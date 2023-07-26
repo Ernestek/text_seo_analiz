@@ -1,0 +1,8 @@
+nltk==3.8.1
+pymorphy2==0.9.1
+spacy==3.6.0
+# polyglot==16.7.4
+# six
+# icu
+langdetect==1.0.9
+language-tool-python==2.7.1
