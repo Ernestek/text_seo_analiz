@@ -9,8 +9,6 @@ from langdetect import detect
 from nltk import word_tokenize, BigramAssocMeasures, BigramCollocationFinder
 from nltk.corpus import stopwords
 
-from main import get_lemma
-
 
 class TextAnalyzer:
     nltk.download('punkt')
@@ -52,10 +50,15 @@ class TextAnalyzer:
 
         return len(unique_words)
 
+    def get_lemma(self, word):
+        morph = pymorphy2.MorphAnalyzer()
+        parsed_word = morph.parse(word)[0]
+        return parsed_word.normal_form
+
     def dict_significant_words(self):
         stop_words = set(stopwords.words(self.full_lang))
         words = word_tokenize(self.text.lower())
-        words = [get_lemma(word) for word in words if word.isalpha() and word not in stop_words]
+        words = [self.get_lemma(word) for word in words if word.isalpha() and word not in stop_words]
         word_counts = Counter(words)
         significant_words_counts = {word: count for word, count in word_counts.items() if count >= 2}
         return dict(sorted(significant_words_counts.items(), key=lambda item: item[1], reverse=True))
@@ -148,20 +151,20 @@ if __name__ == '__main__':
 
     text = test_text.text
     text = TextAnalyzer(text=str(text))
-    print('Язык: ', text.lang, text.full_lang)
-    print('Количество символов: ', text.get_count_characters())
-    print('Количество символов без пробелов: ', text.count_characters_without_spaces())
-    print('Количество слов: ', text.count_worlds())
-    print('Количество уникальных слов: ', text.count_unique_worlds())
-    print('Количество значимых слов: ', text.count_significant_words())
-    print('Количество стоп-слов: ', text.count_stop_words())
-    print('Процент стоп-слов: ', text.percent_stop_words())
-    print('Вода (%): ', text.water())
-    # print(text.count_grammar_errors())
-    print('Классическая тошнота документа: ', text.classic_nausea())
-    print('Академическая тошнота документа (%): ', text.academic_nausea())
-    print('Среднее количество слов в предложении: ', text.average_words_per_sentence())
-    print('Количество параграфов: ', text.count_paragraphs())
-    print('Семантическое ядро: ', text.generate_semantic_core())
+    # print('Язык: ', text.lang, text.full_lang)
+    # print('Количество символов: ', text.get_count_characters())
+    # print('Количество символов без пробелов: ', text.count_characters_without_spaces())
+    # print('Количество слов: ', text.count_worlds())
+    # print('Количество уникальных слов: ', text.count_unique_worlds())
+    # print('Количество значимых слов: ', text.count_significant_words())
+    # print('Количество стоп-слов: ', text.count_stop_words())
+    # print('Процент стоп-слов: ', text.percent_stop_words())
+    # print('Вода (%): ', text.water())
+    # # print(text.count_grammar_errors())
+    # print('Классическая тошнота документа: ', text.classic_nausea())
+    # print('Академическая тошнота документа (%): ', text.academic_nausea())
+    # print('Среднее количество слов в предложении: ', text.average_words_per_sentence())
+    # print('Количество параграфов: ', text.count_paragraphs())
+    # print('Семантическое ядро: ', text.generate_semantic_core())
     print('Значемые слова: ', text.dict_significant_words())
     print('Словарь стоп-слов: ', text.dict_stop_words())
