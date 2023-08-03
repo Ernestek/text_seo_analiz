@@ -1,29 +1,4 @@
 text = """
-1. Холодное сердце
+Familie Müller plant ihren Urlaub. Sie geht in ein Reisebüro und lässt sich von einem Angestellten beraten. Als Reiseziel wählt sie Mallorca aus. Familie Müller bucht einen Flug auf die Mittelmeerinsel. Sie bucht außerdem zwei Zimmer in einem großen Hotel direkt am Strand. Familie Müller badet gerne im Meer.
 
-Захват Эренделла (захват флага) 2 командф
-У каждой команды есть ключ от замка и они должны захватить ключ противника не потеряв свой. Между базами есть 2 чекпоинта разделенных на красную и синюю команды, на которых они могут передохнуть, попить воды, но не больше 5 человек с команды ( в общем 10) и 3 минут (время циклично), на точке находится 2 сотрудника которые контролируют время. Время начинают отсчитывать с момента когда забежал первый игрок команды.
-Все замораживают, кроме 5 человек, которые размораживают.
-Заморозка - отбор повязки. Разморозка - возвращение повязки. 
-5 человек с команды выбранных в самом начале имею право размораживать, но их заморозить не могут.
-1 чекпоинт для возврата и выдачи ленточек.
-Игра длится 1 час либо до 3 захватов флага одной командой.
-
-Инвентарь: оградительная лента, браслеты для команд, ключ от замка(из картона)
-
-2. Храброе сердце
-Найди противоядие (найди и выпей) Отряды
-По территории спрятаны 5 литровых бутылок напитков с обозначениями отрядов. Каждый отряд должен найти только свои бутылки и найдя - получают подсказку для нахождения финальной бутылки.
-Каждая бутылка - противоядие, финальная - противоядие для наставника.
-С отрядами бегают помощники. 
-Наставники сидят на базе и принимают бутылки. Каждая найденная бутылка должна быть доставлена всем отрядом к наставнику. Искать вторую бутылку можно лишь отддав первую.
-Если отряд не успел найти 5 бутылок за 15 минут до конца - они выполняют задание (наказание) и получают подсказку.
-Задание: Ходить до конца дня в футболках навыворот.
-
-Инвентарь: 40 литровых напитков и 8 напитков отдельно для наставников
-
-3. Моана
-Водная игра (эстафета) Отряды, два на точке
-Точки:
-1. Волейбол мокрыми мочалками
-"""
+Am Abflugtag fahren Herr und Frau Müller mit ihren beiden Kindern im Taxi zum Flughafen. Dort warten schon viele Urlauber. Alle wollen nach Mallorca fliegen. Familie Müller hat viel Gepäck dabei: drei große Koffer und zwei Taschen. Die Taschen sind Handgepäck. Familie Müller nimmt sie mit in das Flugzeug. Am Flugschalter checkt die Familie ein und erhält ihre Bordkarten. Die Angestellte am Flugschalter erklärt Herrn Müller den Weg zum Flugsteig. Es ist nicht mehr viel Zeit bis zum Abflug. Familie Müller geht durch die Sicherheitskontrolle. Als alle das richtige Gate erreichen, setzen sie sich in den Wartebereich. Kurz darauf wird ihre Flugnummer aufgerufen und Familie Müller steigt mit vielen anderen Passagieren in das Flugzeug nach Mallorca. Beim Starten fühlt sich Herr Müller nicht wohl. Ihm wird ein wenig übel. Nach zwei Stunden landet das Flugzeug. Am Gepäckband warten alle Passagiere noch auf ihr fehlendes Gepäck. Danach kann endlich der Urlaub beginnen."""
