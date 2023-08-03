@@ -39,10 +39,8 @@ class TextAnalyzer:
 
     def count_unique_words(self):
         nlp = spacy.load(self.spacy_lang_model)  # Load the appropriate language model
-
         doc = nlp(self.text.lower())
         unique_words = set()
-
         for token in doc:
             if token.is_alpha:
                 lemma = token.lemma_.lower()
@@ -52,19 +50,15 @@ class TextAnalyzer:
 
     def dict_significant_words(self):
         nlp = spacy.load(self.spacy_lang_model)
-
         # Получение списка стоп-слов из модели spaCy
         stop_words = nlp.Defaults.stop_words
-
         # Токенизация и лемматизация с помощью spaCy
         doc = nlp(self.text.lower())
         words = [token.lemma_ for token in doc if token.is_alpha and token.lemma_ not in stop_words]
-
         # Подсчет слов и выбор значимых слов с количеством вхождений >= 2
         word_counts = Counter(words)
         min_count = int(self.count_unique_words()/100) or 1
         significant_words_counts = {word: count for word, count in word_counts.items() if count >= min_count}
-
         return dict(sorted(significant_words_counts.items(), key=lambda item: item[1], reverse=True))
 
     def count_significant_words(self):
@@ -87,12 +81,9 @@ class TextAnalyzer:
 
         doc = nlp(self.text.lower())
         stopwords = nlp.Defaults.stop_words
-
         stop_words_list = [token.text for token in doc if token.text.lower() in stopwords]
-
         stop_words_list = Counter(stop_words_list)
         stop_words_list = sorted(dict(stop_words_list).items(), key=lambda x: x[1], reverse=True)
-
         return dict(stop_words_list)
 
     def generate_semantic_core(self):
@@ -101,7 +92,6 @@ class TextAnalyzer:
         word_list = re.findall(r'[^\W\d_]+', self.text.lower())
         doc = nlp(' '.join(word_list))
         stopwords = set([token.lower() for token in nlp.Defaults.stop_words])
-
         words = [token.lemma_ for token in doc if token.is_alpha and token.lemma_ not in stopwords]
         doc = nlp(' '.join(words))
 
@@ -110,19 +100,14 @@ class TextAnalyzer:
         word_freq = Counter(filtered_words)
         min_word = int(self.count_unique_words()/100) + 1
         keywords = {word: count for word, count in word_freq.items() if count >= min_word}
-
         # Extract bigrams from the text using spaCy
         bigrams = [filtered_words[i] + " " + filtered_words[i + 1] for i in range(len(filtered_words) - 1)]
-
         # Calculate bigram frequency manually
         bigram_freq = Counter(bigrams)
         n_best_phrases = {phrase: count for phrase, count in bigram_freq.items() if count >= min_word + 1}
-
         # Adding phrases to the semantic core
         keywords.update(n_best_phrases)
-
         keywords = sorted(dict(keywords).items(), key=lambda x: x[1], reverse=True)
-
         return dict(keywords)
 
     def classic_nausea(self):
